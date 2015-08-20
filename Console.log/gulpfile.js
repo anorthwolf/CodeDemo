@@ -5,6 +5,13 @@
 var gulp = require('gulp');
 var stripDebug = require('gulp-strip-debug');
 
+
+gulp.task('htmlTest', function () {
+    return gulp.src('ConsoleDemo.js')
+        .pipe(stripDebug())
+        .pipe(gulp.dest('dist'));
+});
+
 gulp.task('default', function () {
     return gulp.src('ConsoleLogSeed.js')
         .pipe(stripDebug())
